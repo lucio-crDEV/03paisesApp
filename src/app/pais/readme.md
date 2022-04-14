@@ -1,0 +1,1 @@
+# Es una estructura recomendada para componentes medias o grandes, para un siguiente componente como 'productos' por ejemplo, deberia tener la misma estructura para que respondan por componentes y en shared los compartidos o reutilizables
