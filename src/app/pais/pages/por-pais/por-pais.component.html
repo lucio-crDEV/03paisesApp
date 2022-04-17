@@ -1,22 +1,41 @@
-<h2>Por País</h2>
-<hr>
-
-
-<div class="row">
-    <div class="col">
-        <app-pais-input
-            (onEnter)=" buscar($event)"
-            (onDebounce)="sugerencias( $event )"
-            placeholder="Buscar por País..."
-            >
-        </app-pais-input>
+<div class="animate__animated animate__fadeInRight animate__faster">
+    <h2>Buscar por País</h2>
+    <hr>
+    
+    
+    <div class="row">
+        <div class="col">
+            <app-pais-input
+                (onEnter)=" buscar($event)"
+                (onDebounce)="sugerencias( $event )"
+                placeholder="Buscar por País..."
+                >
+            </app-pais-input>
+        </div>
     </div>
+    
+    <ul *ngIf="mostrarSugerencias"
+        class="list-group">
+            <li *ngFor="let sugerido of paisesSugeridos"
+                class="list-group-item list-group-item-action">
+                <a  class="nav-link text-dark"
+                    [routerLink]="['/pais', sugerido.cca2]">
+                    {{sugerido.name.common}}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-action"
+            (click)=" buscarSugerido(termino)">
+                <a  class="nav-link text-dark">
+                    Buscar "{{ termino }}"
+                </a>
+            </li>
+    </ul>
+
+
+    <hr>
 </div>
-
-
-<hr>
 <div    *ngIf="hayError"
-        class="alert alert-danger">
+        class="alert alert-danger text-center animate__animated animate__jackInTheBox animate__fast">
     No se encontró ningún país llamado <strong>{{termino | titlecase }}</strong>
 </div>
 
@@ -24,7 +43,7 @@
         class="row">
     <div 
         class="col">
-        <app-pais-tabla 
+        <app-pais-tabla
             [paises]="paises">
         </app-pais-tabla>
     </div>

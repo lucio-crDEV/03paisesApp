@@ -1,6 +1,6 @@
 
-<table class="table table-light table-hover">
-    <thead>
+<table class="table table-light table-borderless table-hover">
+    <thead role="button">
         <tr>
             <th>#</th>
             <th>Bandera</th>
@@ -9,8 +9,9 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let pais of paises; let i = index;" >
+    <tbody role="button">
+        <tr *ngFor="let pais of paises; let i = index;" 
+            class="animate__animated animate__fadeIn animate__faster">
             <td>
                 {{i + 1}}
             </td>
@@ -23,7 +24,8 @@
             <td>{{pais.capital ? pais.capital + "," : ""}} {{pais.name.common}}</td>
             <td>{{pais.population | number }}</td>
             <td>
-                <a [routerLink]="['/pais', pais.cca2]" >Ver más...</a>
+                <a  class="nav-link"
+                    [routerLink]="['/pais', pais.cca2]" >Ver más...</a>
             </td>
         </tr>
     </tbody>
