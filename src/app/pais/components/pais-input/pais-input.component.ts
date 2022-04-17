@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { Country } from '../../interfaces/pais.interface';
 
 
 @Component({
