@@ -7,13 +7,30 @@
         <div class="col">
             <app-pais-input
                 (onEnter)=" buscar( $event )"
+                (onDebounce)="sugerencias( $event )"
                 placeholder="Buscar por Capital..."
                 >
             </app-pais-input>
         </div>
     </div>
     
-    
+    <ul *ngIf="mostrarSugerencias"
+        class="list-group">
+            <li *ngFor="let sugerido of paisesSugeridos"
+                class="list-group-item list-group-item-action">
+                <a  class="nav-link text-dark"
+                    [routerLink]="['/pais', sugerido.cca2]">
+                    {{sugerido['capital'][0]}}, {{sugerido.name.common}}
+                </a>
+            </li>
+            <li class="list-group-item list-group-item-action"
+            (click)=" buscarSugerido(termino)">
+                <a  class="nav-link text-dark">
+                    Buscar "{{ termino | titlecase }}"
+                </a>
+            </li>
+    </ul>
+
     <hr>
 </div>
 
@@ -23,12 +40,12 @@
     No se encontró ninguna capital llamada <strong>{{termino | titlecase }}</strong>
 </div>
 
-<div    *ngIf="capitales.length > 0" 
+<div    *ngIf="paises.length > 0" 
         class="row">
     <div 
         class="col">
         <app-pais-tabla 
-            [paises]="capitales">
+            [paises]="paises">
         </app-pais-tabla>
     </div>
 </div>
