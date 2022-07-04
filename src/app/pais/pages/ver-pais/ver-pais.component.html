@@ -6,13 +6,18 @@
 
 
 <ng-template #divPais>
-    <div class="row ms-4">
+    <div class="container-fluid ms-2 mx-lg-5">
+        <div class="row">
+
+
+            
+        </div>
         <div class="col-12 animate__animated animate__bounce animate__fast">
             <h1 class="user-select-none">País: <span class="user-select-all" role="button">{{ pais[0].name.common}}</span></h1>
         </div>
 
         <div class="row animate__animated animate__fadeInRight animate__faster">
-            <div class="col-4">
+            <div class="col-12 col-lg-4">
                 <h3 class="user-select-none">Bandera</h3>
                 <img class="img-thumbnail" 
                      role="button"
@@ -20,7 +25,7 @@
             </div>
         
 
-            <div class="col text-center">
+            <div class="col-12 col-lg-6 text-center">
                 <h3 class="user-select-none mb-5">Información</h3>
                 <ul class="list-group" role="button">
                     <li class="list-group-item list-group-item-action list-group-item-warning">

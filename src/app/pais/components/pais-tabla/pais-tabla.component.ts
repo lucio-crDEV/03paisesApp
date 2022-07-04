@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, Input } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
 
@@ -7,9 +8,5 @@ import { Country } from '../../interfaces/pais.interface';
 })
 export class PaisTablaComponent {
   @Input() paises :  Country[] = []
-
-  constructor() { }
-
-
 
 }

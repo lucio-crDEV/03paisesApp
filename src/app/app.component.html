@@ -1,11 +1,15 @@
-<div class="row container mx-5 mt-5">
 
-    <div class="col-3">
-        <app-sidebar></app-sidebar>
-    </div>
-
-    <div class="ms-5 col">
-        <router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-around">
+    
+        <div class="col-12 mt-4 px-5 col-lg-2 mt-lg-5 ms-lg-auto">
+            <app-sidebar></app-sidebar>
+        </div>
+    
+        <div class="col-12 mt-4 px-5 col-lg-8 mt-lg-5 mx-lg-auto">
+            <router-outlet></router-outlet>
+        </div>
+    
     </div>
 
 </div>
